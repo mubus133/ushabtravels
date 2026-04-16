@@ -48,17 +48,12 @@ export default function PackageCard({ pkg }: PackageCardProps) {
         </div>
 
         <div className="flex items-center justify-between pt-6 border-t border-primary/5">
-          <div>
-            <span className="text-primary/40 text-[10px] uppercase font-black tracking-widest block mb-1">Price per person</span>
-            <span className="text-3xl font-display font-black text-primary">
-              ${pkg.price}
-            </span>
-          </div>
           <Link
             to={`/packages/${pkg.id}`}
-            className="w-14 h-14 rounded-2xl bg-primary text-white flex items-center justify-center group-hover:bg-secondary transition-all duration-300 shadow-lg shadow-primary/20 group-hover:shadow-secondary/20"
+            className="flex-grow btn-primary py-4 text-center rounded-2xl font-bold flex items-center justify-center group/btn"
           >
-            <ArrowRight size={24} />
+            Book Now
+            <ArrowRight size={18} className="ml-2 transition-transform group-hover/btn:translate-x-1" />
           </Link>
         </div>
       </div>

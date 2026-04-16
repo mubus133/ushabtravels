@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Clock, MapPin, Star, CheckCircle2, XCircle, ArrowLeft, Calendar, Users, Shield } from 'lucide-react';
+import { Clock, MapPin, Star, CheckCircle2, ArrowLeft, Shield } from 'lucide-react';
 import { PACKAGES } from '../constants';
 
 export default function PackageDetails() {
@@ -62,59 +62,61 @@ export default function PackageDetails() {
               </div>
             </section>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-green-50 p-8 rounded-3xl border border-green-100">
-                <h4 className="text-xl font-display font-bold text-green-800 mb-6 flex items-center">
-                  <CheckCircle2 className="mr-2" /> Inclusions
-                </h4>
-                <ul className="space-y-3">
-                  {pkg.inclusions.map((item, i) => (
-                    <li key={i} className="flex items-center text-green-700 text-sm font-medium">
-                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3" /> {item}
-                    </li>
-                  ))}
-                </ul>
+            <section className="bg-primary/5 p-10 rounded-[3rem] border border-primary/10">
+              <h2 className="text-3xl font-display font-bold text-primary mb-8 text-center">Why Choose Ushab Travels?</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="text-center space-y-3">
+                  <div className="w-12 h-12 bg-secondary/20 text-secondary rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Shield size={24} />
+                  </div>
+                  <h4 className="font-bold text-primary">Secure Booking</h4>
+                  <p className="text-sm text-gray-500">Your safety and data security are our top priorities.</p>
+                </div>
+                <div className="text-center space-y-3">
+                  <div className="w-12 h-12 bg-secondary/20 text-secondary rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Clock size={24} />
+                  </div>
+                  <h4 className="font-bold text-primary">24/7 Support</h4>
+                  <p className="text-sm text-gray-500">We are here for you at any time, anywhere in the world.</p>
+                </div>
+                <div className="text-center space-y-3">
+                  <div className="w-12 h-12 bg-secondary/20 text-secondary rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Star size={24} />
+                  </div>
+                  <h4 className="font-bold text-primary">Expert Guides</h4>
+                  <p className="text-sm text-gray-500">Local experts to give you the most authentic experience.</p>
+                </div>
+                <div className="text-center space-y-3">
+                  <div className="w-12 h-12 bg-secondary/20 text-secondary rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle2 size={24} />
+                  </div>
+                  <h4 className="font-bold text-primary">Best Value</h4>
+                  <p className="text-sm text-gray-500">Premium experiences at the most competitive prices.</p>
+                </div>
               </div>
-              <div className="bg-red-50 p-8 rounded-3xl border border-red-100">
-                <h4 className="text-xl font-display font-bold text-red-800 mb-6 flex items-center">
-                  <XCircle className="mr-2" /> Exclusions
-                </h4>
-                <ul className="space-y-3">
-                  {pkg.exclusions.map((item, i) => (
-                    <li key={i} className="flex items-center text-red-700 text-sm font-medium">
-                      <div className="w-1.5 h-1.5 bg-red-500 rounded-full mr-3" /> {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            </section>
           </div>
 
           {/* Sidebar Booking */}
           <div className="lg:col-span-1">
             <div className="sticky top-32 bg-white p-8 rounded-[40px] shadow-xl border border-gray-100 space-y-8">
-              <div>
-                <span className="text-gray-400 text-sm block mb-1">Price per person</span>
-                <div className="flex items-baseline space-x-2">
-                  <span className="text-4xl font-display font-extrabold text-primary">${pkg.price}</span>
-                  <span className="text-gray-400 font-medium">USD</span>
-                </div>
-              </div>
-
               <div className="space-y-4">
-                <div className="p-4 bg-surface rounded-2xl flex items-center space-x-4">
-                  <Calendar className="text-secondary" />
-                  <div>
-                    <div className="text-xs text-gray-400 uppercase font-bold">Next Departure</div>
-                    <div className="text-sm font-bold text-primary">May 15, 2026</div>
-                  </div>
-                </div>
-                <div className="p-4 bg-surface rounded-2xl flex items-center space-x-4">
-                  <Users className="text-secondary" />
-                  <div>
-                    <div className="text-xs text-gray-400 uppercase font-bold">Group Size</div>
-                    <div className="text-sm font-bold text-primary">Max 12 People</div>
-                  </div>
+                <div className="p-6 bg-surface rounded-3xl space-y-4">
+                  <h4 className="text-sm font-bold text-primary uppercase tracking-widest border-b border-gray-100 pb-2">Booking Benefits</h4>
+                  <ul className="space-y-3">
+                    <li className="flex items-center text-sm text-gray-600">
+                      <CheckCircle2 size={16} className="text-green-500 mr-2" /> Flexible Travel Dates
+                    </li>
+                    <li className="flex items-center text-sm text-gray-600">
+                      <CheckCircle2 size={16} className="text-green-500 mr-2" /> Instant Confirmation
+                    </li>
+                    <li className="flex items-center text-sm text-gray-600">
+                      <CheckCircle2 size={16} className="text-green-500 mr-2" /> Customizable Itinerary
+                    </li>
+                    <li className="flex items-center text-sm text-gray-600">
+                      <CheckCircle2 size={16} className="text-green-500 mr-2" /> Group & Solo Friendly
+                    </li>
+                  </ul>
                 </div>
               </div>
 

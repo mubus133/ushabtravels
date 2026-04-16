@@ -21,7 +21,7 @@ export default function Booking() {
     message: ''
   });
 
-  const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '';
+  const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '2348109983573';
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

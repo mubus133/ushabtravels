@@ -14,7 +14,7 @@ export default function Contact() {
     message: ''
   });
 
-  const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '';
+  const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '2348109983573';
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -84,9 +84,8 @@ export default function Contact() {
               <h3 className="text-2xl font-black font-display text-primary">Contact Information</h3>
               <div className="space-y-6">
                 {[
-                  { icon: Phone, title: 'Call Us', detail: '+234 800 123 4567', sub: 'Mon-Fri, 9am-6pm' },
-                  { icon: Mail, title: 'Email Us', detail: 'info@ushabtravels.com', sub: 'Online support 24/7' },
-                  { icon: MapPin, title: 'Visit Us', detail: '123 Travel Plaza, VI, Lagos', sub: 'Head Office' },
+                  { icon: Phone, title: 'Call Us', detail: '+234 810 998 3573', sub: 'Mon-Sun, 24/7' },
+                  { icon: Mail, title: 'Email Us', detail: 'ushabcreations4@gmail.com', sub: 'Online support 24/7' },
                 ].map((item, idx) => (
                   <div key={idx} className="flex space-x-4">
                     <div className="w-12 h-12 shrink-0 rounded-2xl bg-secondary/5 flex items-center justify-center text-secondary">

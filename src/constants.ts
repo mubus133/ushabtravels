@@ -1,3 +1,5 @@
+import saudiHajjImg from './assets/sauddi.png';
+
 export interface Destination {
   id: string;
   name: string;
@@ -19,81 +21,103 @@ export interface TourPackage {
   reviews: number;
   highlights: string[];
   itinerary: { day: number; title: string; description: string }[];
-  inclusions: string[];
-  exclusions: string[];
 }
 
 export const DESTINATIONS: Destination[] = [
   {
-    id: '1',
-    name: 'Santorini',
-    country: 'Greece',
-    image: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&q=80&w=800',
-    description: 'Experience the breathtaking sunsets and iconic blue-domed churches.',
+    id: 'dest-saudi',
+    name: 'Saudi Hajj & Umrah',
+    country: 'Saudi Arabia',
+    image: saudiHajjImg,
+    description: 'Experience the spiritual journey of a lifetime with our dedicated Hajj and Umrah services.',
     featured: true,
     category: 'International'
   },
   {
-    id: '2',
-    name: 'Bali',
-    country: 'Indonesia',
-    image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&q=80&w=800',
-    description: 'A tropical paradise with lush jungles and serene beaches.',
-    featured: true,
-    category: 'International'
-  },
-  {
-    id: '3',
+    id: 'dest-dubai',
     name: 'Dubai',
     country: 'UAE',
     image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=800',
-    description: 'Modern luxury meets desert adventure in the city of gold.',
+    description: 'Experience the pinnacle of luxury and modern architecture.',
     featured: true,
     category: 'International'
   },
   {
-    id: '4',
-    name: 'Maldives',
-    country: 'Maldives',
-    image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&q=80&w=800',
-    description: 'Crystal clear waters and overwater villas for the ultimate escape.',
-    featured: false,
+    id: 'dest-uk',
+    name: 'United Kingdom',
+    country: 'Europe',
+    image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=80&w=800',
+    description: 'Explore the rich history and royal heritage of the UK.',
+    featured: true,
+    category: 'International'
+  },
+  {
+    id: 'dest-canada',
+    name: 'Canada',
+    country: 'North America',
+    image: 'https://images.unsplash.com/photo-1559511260-66a654ae982a?auto=format&fit=crop&q=80&w=800',
+    description: 'Breathtaking cityscapes and vibrant culture await in the Great North.',
+    featured: true,
     category: 'International'
   }
 ];
 
 export const PACKAGES: TourPackage[] = [
   {
-    id: 'pkg-1',
-    title: 'European Grandeur Tour',
-    destination: 'Paris, Rome, Amsterdam',
-    duration: '12 Days, 11 Nights',
-    price: 2499,
-    image: 'https://images.unsplash.com/photo-1493397212122-2b85dda8106b?auto=format&fit=crop&q=80&w=800',
-    rating: 4.9,
-    reviews: 128,
-    highlights: ['Eiffel Tower Dinner', 'Colosseum Guided Tour', 'Canal Cruise'],
+    id: 'pkg-saudi',
+    title: 'Saudi Hajj & Umrah Package',
+    destination: 'Makkah & Madinah',
+    duration: '15 Days, 14 Nights',
+    price: 0,
+    image: saudiHajjImg,
+    rating: 5.0,
+    reviews: 245,
+    highlights: ['Ziyarat in Makkah', 'Ziyarat in Madinah', 'Guided Religious Tours'],
     itinerary: [
-      { day: 1, title: 'Arrival in Paris', description: 'Welcome to the City of Light. Transfer to your luxury hotel.' },
-      { day: 2, title: 'Paris City Tour', description: 'Visit the Louvre, Notre Dame, and enjoy a Seine river cruise.' }
-    ],
-    inclusions: ['Luxury Accommodation', 'Daily Breakfast', 'Professional Guide', 'Airport Transfers'],
-    exclusions: ['International Flights', 'Personal Expenses', 'Travel Insurance']
+      { day: 1, title: 'Arrival in Jeddah', description: 'Transfer to Makkah and check-in to your hotel near the Haram.' },
+      { day: 2, title: 'Umrah Performance', description: 'Guided Umrah performance with our experienced religious guides.' }
+    ]
   },
   {
-    id: 'pkg-2',
-    title: 'Exotic Bali Retreat',
-    destination: 'Ubud & Seminyak',
+    id: 'pkg-dubai',
+    title: 'Dubai Luxury Experience',
+    destination: 'Dubai, UAE',
     duration: '7 Days, 6 Nights',
-    price: 1299,
-    image: 'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&q=80&w=800',
+    price: 0,
+    image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=800',
     rating: 4.8,
-    reviews: 85,
-    highlights: ['Ubud Monkey Forest', 'Rice Terrace Trekking', 'Beachfront Spa'],
+    reviews: 210,
+    highlights: ['Burj Khalifa Visit', 'Desert Safari', 'Palm Jumeirah'],
     itinerary: [
-      { day: 1, title: 'Ubud Arrival', description: 'Check into your jungle villa and enjoy a traditional welcome.' }
-    ],
-    inclusions: ['Villa Stay', 'Yoga Sessions', 'Cultural Tours'],
-    exclusions: ['Lunch & Dinner', 'Visa Fees']
+      { day: 1, title: 'Arrival in Dubai', description: 'Check into your luxury hotel with views of the Burj Khalifa.' }
+    ]
+  },
+  {
+    id: 'pkg-uk',
+    title: 'United Kingdom Royal Tour',
+    destination: 'London, Edinburgh, Cotswolds',
+    duration: '12 Days, 11 Nights',
+    price: 0,
+    image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=80&w=800',
+    rating: 4.7,
+    reviews: 142,
+    highlights: ['Buckingham Palace', 'Edinburgh Castle', 'Stonehenge'],
+    itinerary: [
+      { day: 1, title: 'Arrival in London', description: 'Welcome to London. Private transfer to your hotel in Mayfair.' }
+    ]
+  },
+  {
+    id: 'pkg-canada',
+    title: 'Canada Trip Holiday',
+    destination: 'Vancouver, Toronto, Montreal',
+    duration: '14 Days, 13 Nights',
+    price: 0,
+    image: 'https://images.unsplash.com/photo-1559511260-66a654ae982a?auto=format&fit=crop&q=80&w=800',
+    rating: 4.9,
+    reviews: 98,
+    highlights: ['CN Tower Visit', 'Vancouver Waterfront', 'Old Montreal Tour'],
+    itinerary: [
+      { day: 1, title: 'Arrival in Vancouver', description: 'Explore the beautiful coastal city of Vancouver and its vibrant downtown.' }
+    ]
   }
 ];
