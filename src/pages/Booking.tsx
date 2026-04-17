@@ -14,6 +14,7 @@ export default function Booking() {
   const [formData, setFormData] = useState({
     package: packageId || '',
     date: '',
+    returnDate: '',
     travelers: '1',
     name: '',
     email: '',
@@ -50,7 +51,7 @@ export default function Booking() {
       
       // Automatically redirect to WhatsApp if number is provided
       if (whatsappNumber) {
-        const text = `Hello Ushab Travels! I'm interested in booking a trip.\n\nDestination: ${destination}\nDate: ${formData.date}\nTravelers: ${formData.travelers}\nName: ${formData.name}\nPhone: ${formData.phone}`;
+        const text = `Hello Ushab Travels! I'm interested in booking a trip.\n\nDestination: ${destination}\nDeparture Date: ${formData.date}\nReturn Date: ${formData.returnDate}\nTravelers: ${formData.travelers}\nName: ${formData.name}\nPhone: ${formData.phone}`;
         const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
         
         // Use window.open to avoid iframe "refused to connect" errors
@@ -74,7 +75,7 @@ export default function Booking() {
     const selectedPackage = PACKAGES.find(p => p.id === formData.package);
     const destination = selectedPackage ? selectedPackage.title : 'Custom Destination';
     
-    const text = `Hello Ushab Travels! I'm interested in booking a trip.\n\nDestination: ${destination}\nDate: ${formData.date}\nTravelers: ${formData.travelers}\nName: ${formData.name}\nPhone: ${formData.phone}`;
+    const text = `Hello Ushab Travels! I'm interested in booking a trip.\n\nDestination: ${destination}\nDeparture Date: ${formData.date}\nReturn Date: ${formData.returnDate}\nTravelers: ${formData.travelers}\nName: ${formData.name}\nPhone: ${formData.phone}`;
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
   };
@@ -168,7 +169,7 @@ export default function Booking() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-3">
-                    <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-4">Travel Date</label>
+                    <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-4">Departure Date</label>
                     <input 
                       required 
                       type="date" 
@@ -178,6 +179,19 @@ export default function Booking() {
                       className="w-full px-8 py-5 rounded-3xl bg-primary/5 border-0 focus:ring-2 focus:ring-secondary outline-none transition-all font-bold text-primary" 
                     />
                   </div>
+                  <div className="space-y-3">
+                    <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-4">Return Date (Optional)</label>
+                    <input 
+                      type="date" 
+                      name="returnDate"
+                      value={formData.returnDate}
+                      onChange={handleChange}
+                      className="w-full px-8 py-5 rounded-3xl bg-primary/5 border-0 focus:ring-2 focus:ring-secondary outline-none transition-all font-bold text-primary" 
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-3">
                     <label className="text-[10px] font-black uppercase tracking-widest text-primary/40 ml-4">Travelers</label>
                     <input 

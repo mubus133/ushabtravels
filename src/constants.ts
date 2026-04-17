@@ -1,4 +1,5 @@
-import saudiHajjImg from './assets/saudi-hajj.png';
+// Using static public path for better reliability in production
+const saudiHajjImg = '/images/saudi.png';
 
 export interface Destination {
   id: string;

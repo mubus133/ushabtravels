@@ -67,7 +67,7 @@ app.post("/api/contact", async (req, res) => {
 });
 
 app.post("/api/booking", async (req, res) => {
-  const { name, email, phone, destination, date, travelers, message } = req.body;
+  const { name, email, phone, destination, date, returnDate, travelers, message } = req.body;
 
   if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD) {
     return res.status(500).json({ 
@@ -94,7 +94,8 @@ app.post("/api/booking", async (req, res) => {
       Email: ${email}
       Phone: ${phone}
       Destination: ${destination}
-      Preferred Date: ${date}
+      Departure Date: ${date}
+      Return Date: ${returnDate || 'Not specified'}
       Number of Travelers: ${travelers}
       Message: ${message}
     `,
