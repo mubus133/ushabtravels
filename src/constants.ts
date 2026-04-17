@@ -1,4 +1,4 @@
-import saudiHajjImg from './assets/sauddi.png';
+import saudiHajjImg from './assets/saudi-hajj.png';
 
 export interface Destination {
   id: string;

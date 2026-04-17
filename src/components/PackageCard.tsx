@@ -22,7 +22,6 @@ export default function PackageCard({ pkg }: PackageCardProps) {
           src={pkg.image}
           alt={pkg.title}
           className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-          referrerPolicy="no-referrer"
         />
         <div className="absolute top-6 left-6">
           <span className="px-4 py-2 glass-morphism rounded-2xl text-white text-[10px] font-bold uppercase tracking-widest">
