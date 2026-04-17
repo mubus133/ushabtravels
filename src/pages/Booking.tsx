@@ -51,13 +51,13 @@ export default function Booking() {
       
       // Automatically redirect to WhatsApp if number is provided
       if (whatsappNumber) {
-        const text = `Hello Ushab Travels! I'm interested in booking a trip.\n\nDestination: ${destination}\nDeparture Date: ${formData.date}\nReturn Date: ${formData.returnDate}\nTravelers: ${formData.travelers}\nName: ${formData.name}\nPhone: ${formData.phone}`;
+        const text = `Hello Ushab Travels! I'm interested in booking a trip.\n\nDestination: ${destination}\nDeparture Date: ${formData.date}\nReturn Date: ${formData.returnDate || 'Not specified'}\nTravelers: ${formData.travelers}\nName: ${formData.name}\nPhone: ${formData.phone}`;
         const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
         
-        // Use window.open to avoid iframe "refused to connect" errors
+        // Use location.href instead of window.open to bypass pop-up blockers after async actions
         setTimeout(() => {
-          window.open(url, '_blank');
-        }, 1000);
+          window.location.href = url;
+        }, 1500);
       }
 
     } catch (err) {
@@ -104,6 +104,9 @@ export default function Booking() {
                 <h2 className="text-5xl font-black font-display text-primary">Inquiry Received!</h2>
                 <p className="text-primary/60 max-w-md mx-auto text-lg leading-relaxed">
                   We've received your booking request for <span className="text-primary font-bold">{PACKAGES.find(p => p.id === formData.package)?.title || 'your selected package'}</span>.
+                </p>
+                <p className="text-secondary font-bold animate-pulse">
+                  Redirecting you to WhatsApp to finalize...
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
