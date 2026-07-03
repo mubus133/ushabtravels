@@ -18,7 +18,7 @@ export default function Home() {
           className="absolute inset-0 z-0"
         >
           <img
-            src="https://images.unsplash.com/photo-1506929199175-6000c6506dbc?auto=format&fit=crop&q=80&w=2000"
+            src="https://images.unsplash.com/photo-1556388158-158ea5ccacbd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Hero"
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
